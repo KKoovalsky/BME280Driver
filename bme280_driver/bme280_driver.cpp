@@ -8,7 +8,6 @@
 #include "jungles_os_helpers/generic_implementations/poller.hpp"
 
 #include <chrono>
-#include <stdexcept>
 
 namespace jungles
 {
@@ -92,7 +91,7 @@ void BME280Driver::wait_device_accessible()
     })};
 
     if (auto is_timeout{!is_no_timeout}; is_timeout)
-        throw std::runtime_error("BME280 inaccessible");
+        throw Error{"BME280 inaccessible"};
 }
 
 void BME280Driver::start_one_shot_measurement()

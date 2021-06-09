@@ -13,3 +13,5 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(JunglesOsHelpersRepo)
 
 target_link_libraries(jungles_bme280_driver PRIVATE jungles::os_helpers)
+
+add_library(jungles::bme280_driver ALIAS jungles_bme280_driver)
